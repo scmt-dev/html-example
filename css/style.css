@@ -55,7 +55,31 @@ body {
     background-color: red;
     z-index: 3;
     border-radius: 50%;
-    bottom: -50px;
-    left: -20px;
+    bottom: 50px;
+    left: 20px;
+    transition: all 1s;
 }
-
+.circle:hover {
+    background-color: purple;
+    border-radius: 0;
+    left: 50px;
+    rotate: 45deg;
+    scale: 200%;
+}
+.grid {
+    display: grid;
+    gap: 10px 50px;
+}
+.col-2 {
+    grid-template-columns: 1fr 1fr;
+}
+.border {
+    background-color: white;
+    border: 5px solid #a43232;
+    transition:  all .5s;
+}
+.border:hover {
+    background-color: pink;
+    border: 10px solid black;
+    font-size: 20px;
+}
