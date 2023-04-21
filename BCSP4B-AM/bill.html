@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill-001</title>
+    <style>
+      .bill {
+        width: 300px;
+        margin: 0 auto;
+      }
+      .text-center {
+        width: 300px;
+        margin: 0 auto;
+      }
+      @media print {
+        .hide-print {
+          display: none;
+        }
+      }
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <div class="bill">
+      <h1>BitDigo.ltd</h1>
+      <article>
+        <p>Bill: 001</p>
+        <p>Phone: 9999 9999</p>
+      </article>
+      <table id="tblToExcl">
+        <tr style="background-color: #eee">
+          <th>#</th>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Pepsi</td>
+          <td>10,000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Beer 2</td>
+          <td>2x15,000</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Soju</td>
+          <td>27,000</td>
+        </tr>
+        <tr>
+          <td colspan="2">Total</td>
+          <td>
+            <b>67,000 LAK</b>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="text-center hide-print">
+      <button onclick="printx()">Print</button>
+      <button onclick="htmlTableToExcel('xlsx')">Download</button>
+    </div>
+
+    <script>
+      function printx() {
+        window.print();
+      }
+
+      function htmlTableToExcel(type) {
+        const data = document.getElementById("tblToExcl");
+        const excelFile = XLSX.utils.table_to_book(data, { sheet: "sheet1" });
+        XLSX.write(excelFile, {
+          bookType: type,
+          bookSST: true,
+          type: "base64",
+        });
+        XLSX.writeFile(excelFile, "ExportedFile:HTMLTableToExcel" + type);
+      }
+    </script>
+  </body>
+</html>
