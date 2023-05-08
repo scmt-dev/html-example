@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello js</title>
+</head>
+<body>
+    <!-- ui -->
+    <input type="text" id="txtName" 
+    placeholder="Enter your name">
+    <button onclick="sayHi()">Say Hi</button>
+    <script>
+        // program
+        
+        function sayHi() {
+            const name = document.getElementById('txtName').value
+            if(name=='') {
+                alert('Please enter your name!')
+                return
+            }
+            alert('Hi. '+ name)
+
+        }
+
+
+
+
+        document.writeln('Goodbye, JavaScript!');
+        document.writeln('Hello world');
+
+        // alert('Hello')
+        // confirm('Are you sure?')
+        // prompt('What is your name?')
+
+        console.log('Hi. Mark')
+        console.error('errr xxxx')
+        console.warn('what?')
+
+        var age = 18;
+        document.write(age)
+        console.log(age)
+        let name = 'Jonah';
+        console.log(name);
+        name = 'Mark'
+        console.log(name)
+        document.write('<br>')
+        document.write(typeof age)
+        document.write('<br>')
+        document.write(typeof name)
+        if(age >=18) {
+            document.write(name, 'ດື່ມເບຍໄດ້')
+        }else{
+            document.write(name, 'ອາຍຸບໍ່ເຖິງ')
+        }
+
+        const PI = 3.14
+        document.write(3.14)
+        // PI = 3.10
+        // document.write(PI)
+        document.write('<br>')
+        let isUser = true;
+        let isAdmin = !isUser;
+        document.write(isUser)
+        document.write(isAdmin)
+        let colors = ['red', 'green', 'blue', 'purple', 1];
+        document.write(colors[1])
+        // object
+        let student = {
+            name: 'Mark',
+            age: 18,
+        }
+        document.write(student)
+        document.write(student.name)
+        document.write(student.age)
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

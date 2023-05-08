@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill 100</title>
+    <style>
+        @media print {
+            .hide-print {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>bitdigo.ltd</h1>
+    <h1 class="hide-print">bitdigo.ltd</h1>
     <h4>Bill ID: 100</h4>
     <h4>Bill Date: 2021-08-01</h4>
     <table border="1">
@@ -28,7 +35,7 @@
             <td>100</td>
         </tr>
     </table>
-    <button onclick="printBill()">Print</button>
+    <button class="hide-print" onclick="printBill()">Print 2</button>
 
     <script>
         function printBill() {
