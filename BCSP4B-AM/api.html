@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>Product</h1>
+    <div id="result"></div>
+
+    <script>
+        // create function
+        async function getProducts() {
+            try {
+                const req = await fetch('https://dummyjson.com/products')
+                console.log(req)
+                const res = await req.json()
+                console.log(res)
+                const result = document.getElementById('result')
+                let productItem = ''
+                const products = res.products
+                for(let i=0; i< products.length; i++ ) {
+                    const product = products[i]
+                    productItem += `<div>
+                                        <img src="${product.thumbnail}" />
+                                        <h2>${product.title}</h2>
+                                        <h3>${product.price}</h3>
+                                    </div>`
+                }
+                // add html to tag result
+                result.innerHTML = productItem
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        // call function
+        getProducts();
+    </script>
+</body>
+</html>

@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello js</title>
 </head>
-<body>
+<body id="body">
     <input id="txtName" type="text" placeholder="Name" onblur="sayHi()">
     <button onclick="sayHi()">Say Hi</button>
+
+    <div>
+        <h1>Change Background Color</h1>
+        <input id="inputColor" type="color" value="#ffffff"
+         onchange="changeBackgroundColor()">
+        <button onclick="changeBackgroundColor()">Apply</button>
+    </div>
+
     <script>
+        function changeBackgroundColor() {
+            const input = document.getElementById("inputColor");
+            const color = input.value;
+            const body = document.getElementById("body");
+            body.style.backgroundColor = color;
+            body.style.color = "black";
+            body.style.padding = "20px";
+
+        }
+
+
         function sayHi() {
             const name = document.getElementById('txtName').value;
             alert('Hello ' +name)
