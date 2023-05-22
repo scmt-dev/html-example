@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Call API</title>
+    <style>
+        /* internal style */
+        .grid-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .grid-2 img {
+            width: 100%;
+            transition:  .3s;
+        }
+        .grid-2 img:hover{
+            scale: 130%;
+            rotate: 2deg;
+        }
+
+    </style>
 </head>
 <body>
-    <div id="display"></div>
+    <div  class="grid-2" id="display"></div>
 
     <script>
         // create function
@@ -36,6 +53,16 @@
         }
         // call function
         getProducts();
+        // data structure
+        const students = [
+            {id:'001', name: 'Jon'},
+            {id:'002', name: 'Alex'}
+        ] 
+        console.log(students[1].name)
+
+        const user = false;
+        const admin = !!user; //output: true
+
         
     </script>
 </body>
